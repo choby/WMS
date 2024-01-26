@@ -3,9 +3,10 @@
   <PropertyGroup>
     <ServerGarbageCollection>true</ServerGarbageCollection>
     <ConcurrentGarbageCollection>false</ConcurrentGarbageCollection>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net7.0</TargetFramework>
     <RootNamespace>Coldairarrow.Api</RootNamespace>
     <AssemblyName>Coldairarrow.Api</AssemblyName>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -44,8 +45,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.6" />
-    <PackageReference Include="NSwag.AspNetCore" Version="13.6.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="7.0.15" />
+    <PackageReference Include="NSwag.AspNetCore" Version="14.0.2" />
   </ItemGroup>
 
   <ItemGroup>

@@ -30,7 +30,7 @@ namespace Coldairarrow.Api
                 if (Configuration["LogicDelete"].ToBool())
                     config.UseLogicDelete();
                 config.UseDatabase(Configuration.GetConnectionString(conName), Configuration["DatabaseType"].ToEnum<DatabaseType>());
-                config.SetEntityAssembly(GlobalData.FXASSEMBLY_PATTERN);
+                config.SetEntityAssemblies(GlobalData.AllFxAssemblies.ToArray());
             });
             services.Configure<ApiBehaviorOptions>(options => options.SuppressModelStateInvalidFilter = true);
             services.AddControllers(options =>
@@ -83,7 +83,7 @@ namespace Coldairarrow.Api
                 endpoints.MapControllers();
             });
             app.UseOpenApi(); //添加swagger生成api文档（默认路由文档 /swagger/v1/swagger.json）
-            app.UseSwaggerUi3();//添加Swagger UI到请求管道中(默认路由: /swagger).
+            app.UseSwaggerUi();//添加Swagger UI到请求管道中(默认路由: /swagger).
         }
     }
 }
